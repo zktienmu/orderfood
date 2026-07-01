@@ -34,6 +34,20 @@ Set a custom port with `PORT=8080 npm start`.
 Everyone on the same network opens the same URL, taps their own guest number,
 and starts ordering together.
 
+## Deploy (Railway)
+
+The repo includes `railway.json`, so deploying is one click:
+
+1. Railway → **New Project → Deploy from GitHub repo** → pick `orderfood`.
+2. On first deploy, open **Settings → Networking → Generate Domain** to get a
+   public URL (this also enables WebSockets).
+3. Done — Railway runs `npm install` then `npm start`, and injects `PORT`
+   automatically (the server already reads it).
+
+Keep it at **1 replica** (already set in `railway.json`): the live order is held
+in the server's memory and broadcast in-process, so multiple replicas wouldn't
+share state. Restarts/redeploys clear the table.
+
 ## How it works
 
 - `server.js` — a small Node HTTP server (static files) plus a `ws` WebSocket
