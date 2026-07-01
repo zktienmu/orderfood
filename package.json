@@ -1,0 +1,13 @@
+{
+  "name": "orderfood",
+  "version": "1.0.0",
+  "description": "Bilingual (中英對照) real-time group ordering site for up to 4 diners",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>一起點餐 · Order Together</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AE%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-zh">一起點餐</span>
+        <span class="brand-en">Order Together</span>
+      </div>
+      <div class="topbar-actions">
+        <span class="live" id="liveDot" title="連線狀態 Connection">●</span>
+        <button id="clearAllBtn" class="btn-ghost">清空全部 · Clear all</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="seatbar">
+    <div class="seatbar-inner" id="seatTabs"><!-- seat tabs injected --></div>
+  </div>
+
+  <main class="layout">
+    <section class="menu" id="menu"><!-- menu injected --></section>
+
+    <aside class="summary" id="summary">
+      <h2 class="summary-title">
+        <span>總覽</span><span class="en">Order Summary</span>
+      </h2>
+      <div id="summaryBody"><!-- summary injected --></div>
+      <div class="grand-total">
+        <span>總計 Total</span>
+        <span id="grandTotal">$0</span>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="legend" id="legend"><!-- legend injected --></footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
