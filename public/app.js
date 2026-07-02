@@ -74,9 +74,8 @@
       tab.style.setProperty('--seat-color', SEAT_COLORS[seat]);
       tab.dataset.seat = seat;
       tab.innerHTML = `
-        <span class="seat-label"><span class="seat-dot" style="background:${SEAT_HEX[seat]}"></span>${seat} 號 · Guest ${seat}</span>
-        <input type="text" placeholder="輸入名字 name (選填)" maxlength="24" data-nameinput="${seat}" />
-        <span class="seat-meta" data-seatmeta="${seat}"></span>`;
+        <span class="seat-label"><span class="seat-dot" style="background:${SEAT_HEX[seat]}"></span>${seat} 號</span>
+        <input type="text" placeholder="名字 (選填)" maxlength="24" data-nameinput="${seat}" />`;
       tab.addEventListener('click', (e) => {
         if (e.target.tagName === 'INPUT') return;
         activeSeat = seat;
@@ -174,11 +173,6 @@
       const s = STATE.seats[seat] || { name: '', units: {} };
       const input = document.querySelector(`[data-nameinput="${seat}"]`);
       if (input && document.activeElement !== input && input.value !== s.name) input.value = s.name;
-      const meta = document.querySelector(`[data-seatmeta="${seat}"]`);
-      if (meta) {
-        const { count, total } = seatTotals(seat);
-        meta.textContent = count ? `${count} 項 · $${total}` : '尚未點餐 empty';
-      }
     });
 
     // stepper quantities (active seat)
@@ -249,7 +243,7 @@
       const entries = Object.entries(s.units).filter(([, q]) => q > 0);
       const { count, total } = seatTotals(seat);
       grand += total; grandCount += count;
-      const displayName = s.name ? `${s.name}` : `${seat} 號 Guest ${seat}`;
+      const displayName = s.name ? `${s.name}` : `${seat} 號`;
       html += `<div class="sum-seat"><div class="sum-seat-head"><span class="seat-dot" style="background:${SEAT_HEX[seat]}"></span>${displayName}</div>`;
       if (!entries.length) {
         html += `<div class="sum-empty">—</div>`;
