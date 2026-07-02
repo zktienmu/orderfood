@@ -42,6 +42,22 @@
 
   <footer class="legend" id="legend"><!-- legend injected --></footer>
 
+  <!-- Fixed checkout bar (always visible) -->
+  <div class="checkout" id="checkout">
+    <div class="checkout-detail" id="checkoutDetail">
+      <div class="checkout-detail-head">
+        <span>訂單明細</span><span class="en">Order details</span>
+      </div>
+      <div id="checkoutBody"><!-- per-guest breakdown injected --></div>
+    </div>
+    <button class="checkout-bar" id="checkoutBar" aria-expanded="false">
+      <span class="cb-caret" id="cbCaret">▴</span>
+      <span class="cb-count">共 <b id="cbCount">0</b> 道 · <span class="en">items</span></span>
+      <span class="cb-seats" id="cbSeats"><!-- per-seat colored counts --></span>
+      <span class="cb-grand" id="cbGrand">$0</span>
+    </button>
+  </div>
+
   <script src="/app.js"></script>
 </body>
 </html>

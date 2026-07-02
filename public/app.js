@@ -189,25 +189,30 @@
       el.classList.toggle('has', q > 0);
     });
 
-    // other-seat badges per item
+    // "who ordered this dish" badges — one per guest with qty > 0, in their colour
     document.querySelectorAll('[data-others]').forEach(el => {
       const itemId = el.dataset.others;
       const units = unitsByItem.get(itemId).map(u => u.unitId);
       el.innerHTML = '';
       SEATS.forEach(seat => {
-        if (seat === activeSeat) return;
         const q = units.reduce((sum, uid) => sum + (STATE.seats[seat]?.units[uid] || 0), 0);
         if (q > 0) {
           const b = document.createElement('span');
-          b.className = 'badge';
+          b.className = 'badge' + (seat === activeSeat ? ' mine' : '');
           b.style.background = SEAT_HEX[seat];
-          b.textContent = `${seat}: ${q}`;
+          b.innerHTML = `${seatLabel(seat)}<span class="badge-x">×${q}</span>`;
           el.appendChild(b);
         }
       });
     });
 
     renderSummary();
+  }
+
+  function seatLabel(seat) {
+    const name = (STATE.seats[seat]?.name || '').trim();
+    if (!name) return `${seat}號`;
+    return name.length > 6 ? name.slice(0, 6) + '…' : name;
   }
 
   function seatTotals(seat) {
@@ -238,18 +243,15 @@
   }
 
   function renderSummary() {
-    const body = document.getElementById('summaryBody');
-    body.innerHTML = '';
-    let grand = 0;
+    let grand = 0, grandCount = 0;
+    let html = '';
     SEATS.forEach(seat => {
       const s = STATE.seats[seat] || { name: '', units: {} };
       const entries = Object.entries(s.units).filter(([, q]) => q > 0);
-      const { total } = seatTotals(seat);
-      grand += total;
-      const block = document.createElement('div');
-      block.className = 'sum-seat';
+      const { count, total } = seatTotals(seat);
+      grand += total; grandCount += count;
       const displayName = s.name ? `${s.name}` : `${seat} 號 Guest ${seat}`;
-      let html = `<div class="sum-seat-head"><span class="seat-dot" style="background:${SEAT_HEX[seat]}"></span>${displayName}</div>`;
+      html += `<div class="sum-seat"><div class="sum-seat-head"><span class="seat-dot" style="background:${SEAT_HEX[seat]}"></span>${displayName}</div>`;
       if (!entries.length) {
         html += `<div class="sum-empty">—</div>`;
       } else {
@@ -260,10 +262,28 @@
         }
         html += `<div class="sum-seat-sub"><span>小計 subtotal</span><span>$${total}</span></div>`;
       }
-      block.innerHTML = html;
-      body.appendChild(block);
+      html += `</div>`;
     });
+
+    // sidebar (desktop) + slide-up sheet share the same breakdown
+    document.getElementById('summaryBody').innerHTML = html;
+    document.getElementById('checkoutBody').innerHTML = html;
     document.getElementById('grandTotal').textContent = `$${grand}`;
+
+    // fixed bar quick stats
+    document.getElementById('cbCount').textContent = grandCount;
+    document.getElementById('cbGrand').textContent = `$${grand}`;
+    const seatsEl = document.getElementById('cbSeats');
+    seatsEl.innerHTML = '';
+    SEATS.forEach(seat => {
+      const { count } = seatTotals(seat);
+      if (count > 0) {
+        const c = document.createElement('span');
+        c.className = 'cb-seat';
+        c.innerHTML = `<span class="dot" style="background:${SEAT_HEX[seat]}"></span>${seatLabel(seat)} ×${count}`;
+        seatsEl.appendChild(c);
+      }
+    });
   }
 
   // ---------- Legend + clear ----------
@@ -273,6 +293,13 @@
       .map(([k, v]) => `<span><b>${k}</b> · ${v.zh} ${v.en}</span>`).join('');
     document.getElementById('clearAllBtn').addEventListener('click', () => {
       if (confirm('確定要清空所有人的點餐嗎？\nClear the whole table for everyone?')) send({ type: 'clearAll' });
+    });
+
+    // fixed checkout bar: tap to expand/collapse the detail sheet
+    const checkout = document.getElementById('checkout');
+    document.getElementById('checkoutBar').addEventListener('click', () => {
+      const open = checkout.classList.toggle('open');
+      document.getElementById('checkoutBar').setAttribute('aria-expanded', open);
     });
   }
 })();

@@ -147,11 +147,14 @@ body {
 .stepper .qty.has { color: var(--seat-color, var(--accent)); }
 
 /* other-seat quantity badges */
-.others { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; min-height: 20px; }
+.others { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; min-height: 20px; max-width: 190px; }
 .badge {
-  font-size: .78rem; font-weight: 700; color: #fff; border-radius: 999px;
-  padding: 1px 8px; font-variant-numeric: tabular-nums;
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: .8rem; font-weight: 700; color: #fff; border-radius: 999px;
+  padding: 2px 9px; font-variant-numeric: tabular-nums; white-space: nowrap;
 }
+.badge .badge-x { opacity: .85; font-weight: 800; }
+.badge.mine { outline: 2px solid rgba(255,255,255,.85); outline-offset: -4px; }
 
 /* ---------- Summary ---------- */
 .summary {
@@ -181,11 +184,49 @@ body {
 }
 .legend b { color: var(--ink); }
 
+/* ---------- Fixed checkout bar ---------- */
+body { padding-bottom: 76px; } /* room for the fixed bar */
+.checkout { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; }
+.checkout-bar {
+  width: 100%; border: none; cursor: pointer; font-family: inherit;
+  background: var(--ink); color: #fff;
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px max(18px, env(safe-area-inset-left)) calc(14px + env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 20px rgba(0,0,0,.18);
+}
+.checkout-bar .cb-caret { font-size: 1rem; transition: transform .2s; opacity: .8; }
+.checkout.open .cb-caret { transform: rotate(180deg); }
+.checkout-bar .cb-count { font-size: 1.1rem; font-weight: 700; }
+.checkout-bar .cb-count .en { font-size: .8rem; opacity: .7; font-weight: 500; }
+.checkout-bar .cb-seats { display: flex; gap: 7px; flex: 1 1 auto; flex-wrap: wrap; overflow: hidden; }
+.checkout-bar .cb-grand { margin-left: auto; font-size: 1.35rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.cb-seat {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: .82rem; font-weight: 700; color: #fff;
+  background: rgba(255,255,255,.14); border-radius: 999px; padding: 2px 9px;
+}
+.cb-seat .dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* Slide-up detail sheet */
+.checkout-detail {
+  background: var(--card); border-top: 1px solid var(--line);
+  max-height: 0; overflow-y: auto; transition: max-height .25s ease;
+  box-shadow: 0 -8px 24px rgba(0,0,0,.12);
+}
+.checkout.open .checkout-detail { max-height: min(60vh, 460px); }
+.checkout-detail-head {
+  display: flex; align-items: baseline; gap: 10px; font-weight: 800; font-size: 1.1rem;
+  padding: 16px 18px 6px; position: sticky; top: 0; background: var(--card);
+}
+.checkout-detail-head .en { font-size: .9rem; color: var(--ink-soft); }
+#checkoutBody { padding: 4px 18px 18px; }
+/* the sheet reuses .sum-* summary styles */
+
 /* ---------- Mobile ---------- */
 @media (max-width: 860px) {
   :root { font-size: 17px; }
   .layout { grid-template-columns: 1fr; }
-  .summary { position: static; max-height: none; order: 2; }
+  /* On mobile the fixed checkout bar + slide-up sheet replaces the sidebar */
+  .summary { display: none; }
   .seatbar { top: 56px; }
-  .summary.collapsed #summaryBody { display: none; }
 }
