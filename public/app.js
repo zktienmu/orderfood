@@ -105,7 +105,7 @@
     for (const section of MENU.sections) {
       const sec = document.createElement('div');
       sec.className = 'menu-section';
-      let noteHtml = section.note ? `<p class="section-note">${section.note.zh} · ${section.note.en}</p>` : '';
+      let noteHtml = section.note ? `<p class="section-note">${section.note.zh}</p>` : '';
       sec.innerHTML = `<div class="section-head"><h2>${section.name.zh}</h2><span class="en">${section.name.en}</span></div>${noteHtml}`;
       for (const item of section.items) sec.appendChild(renderCard(item));
       root.appendChild(sec);
@@ -138,7 +138,6 @@
         <div class="item-name-zh">${item.name.zh}<span class="tags">${tags}</span></div>
         <div class="item-name-en">${item.name.en}</div>
         <div class="item-desc-zh">${item.desc.zh}</div>
-        <div class="item-desc-en">${item.desc.en}</div>
         <div class="units">${rows}</div>
       </div>
       <div class="card-side">

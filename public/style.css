@@ -38,25 +38,21 @@ body {
 }
 .topbar-inner {
   max-width: 1180px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; padding: 12px 18px;
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 10px; padding: 7px 18px;
 }
-.brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
-.brand-zh { font-size: 1.5rem; font-weight: 800; letter-spacing: 1px; }
-.brand-en { font-size: 1rem; opacity: .9; font-weight: 500; }
-.topbar-actions { display: flex; align-items: center; gap: 12px; }
-.live { color: #ffd8ce; font-size: .9rem; transition: color .3s; }
+.live { color: #ffd8ce; font-size: .8rem; transition: color .3s; }
 .live.on { color: #7CFC9B; }
 .btn-ghost {
   background: rgba(255,255,255,.16); color: #fff;
   border: 1px solid rgba(255,255,255,.5); border-radius: 999px;
-  padding: 8px 16px; font-size: .95rem; cursor: pointer; font-family: inherit;
+  padding: 3px 12px; font-size: .8rem; cursor: pointer; font-family: inherit;
 }
 .btn-ghost:hover { background: rgba(255,255,255,.28); }
 
 /* ---------- Seat tabs ---------- */
 .seatbar {
-  position: sticky; top: 60px; z-index: 25;
+  position: sticky; top: 38px; z-index: 25;
   background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
@@ -158,9 +154,9 @@ body {
 
 /* ---------- Summary ---------- */
 .summary {
-  position: sticky; top: 150px;
+  position: sticky; top: 128px;
   background: var(--card); border: 1px solid var(--line); border-radius: 18px;
-  padding: 18px; max-height: calc(100vh - 175px); overflow: auto;
+  padding: 18px; max-height: calc(100vh - 150px); overflow: auto;
 }
 .summary-title { margin: 0 0 12px; display: flex; align-items: baseline; gap: 10px; font-size: 1.25rem; }
 .summary-title .en { font-size: .95rem; }
@@ -228,5 +224,5 @@ body { padding-bottom: 76px; } /* room for the fixed bar */
   .layout { grid-template-columns: 1fr; }
   /* On mobile the fixed checkout bar + slide-up sheet replaces the sidebar */
   .summary { display: none; }
-  .seatbar { top: 56px; }
+  .seatbar { top: 36px; }
 }
