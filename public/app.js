@@ -117,32 +117,33 @@
     const tags = (item.tags || []).map(t => `<span class="tag ${t}">${t}</span>`).join('');
     const priceLabel = item.priceNote ? `${item.priceNote.zh}` : `$${item.price}`;
     const units = unitsByItem.get(item.id);
+    const baseUnit = units.find(u => !u.isAddon && !u.label);   // plain dish (no size choice)
+    const sizeUnits = units.filter(u => !u.isAddon && u.label);  // e.g. soup cup/bowl
+    const addonUnits = units.filter(u => u.isAddon);             // e.g. add cheese
 
-    // unit rows (steppers). Addons show "+$", size options show their own price,
-    // a plain single unit needs no label (price is shown on the card side).
-    const rows = units.map(u => {
-      let lbl;
-      if (u.isAddon) {
-        lbl = `<div class="unit-label">＋ ${u.label.zh}<span class="en"> · ${u.label.en}</span> <span class="unit-price">+$${u.price}</span></div>`;
-      } else if (u.label) {
-        lbl = `<div class="unit-label">${u.label.zh}<span class="en"> · ${u.label.en}</span> <span class="unit-price">$${u.price}</span></div>`;
-      } else {
-        lbl = `<div class="unit-label"></div>`;
-      }
-      return `<div class="unit-row">${lbl}${stepperHtml(u.unitId)}</div>`;
-    }).join('');
+    // The base dish stepper sits inline with the price (no wasted row).
+    // Size/add-on choices get their own labelled rows below.
+    const rows = [
+      ...sizeUnits.map(u =>
+        `<div class="unit-row"><div class="unit-label">${u.label.zh} <span class="unit-price">$${u.price}</span></div>${stepperHtml(u.unitId)}</div>`),
+      ...addonUnits.map(u =>
+        `<div class="unit-row"><div class="unit-label">＋ ${u.label.zh} <span class="unit-price">+$${u.price}</span></div>${stepperHtml(u.unitId)}</div>`)
+    ].join('');
 
     card.innerHTML = `
-      <div class="card-main">
-        <div class="item-name-zh">${item.name.zh}<span class="tags">${tags}</span></div>
-        <div class="item-name-en">${item.name.en}</div>
-        <div class="item-desc-zh">${item.desc.zh}</div>
-        <div class="units">${rows}</div>
+      <div class="card-top">
+        <div class="card-titles">
+          <div class="item-name-zh">${item.name.zh}<span class="tags">${tags}</span></div>
+          <div class="item-name-en">${item.name.en}</div>
+        </div>
+        <div class="card-ctrl">
+          <div class="price">${priceLabel}</div>
+          ${baseUnit ? stepperHtml(baseUnit.unitId) : ''}
+        </div>
       </div>
-      <div class="card-side">
-        <div class="price">${priceLabel}</div>
-        <div class="others" data-others="${item.id}"></div>
-      </div>`;
+      <div class="item-desc-zh">${item.desc.zh}</div>
+      <div class="others" data-others="${item.id}"></div>
+      ${rows ? `<div class="units">${rows}</div>` : ''}`;
 
     // wire steppers
     card.querySelectorAll('[data-unit]').forEach(el => {
