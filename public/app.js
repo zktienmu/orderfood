@@ -105,7 +105,7 @@
       const sec = document.createElement('div');
       sec.className = 'menu-section';
       let noteHtml = section.note ? `<p class="section-note">${section.note.zh}</p>` : '';
-      sec.innerHTML = `<div class="section-head"><h2>${section.name.zh}</h2><span class="en">${section.name.en}</span></div>${noteHtml}`;
+      sec.innerHTML = `<div class="section-head"><h2>${section.name.zh}</h2><span class="en">${section.name.ja}</span></div>${noteHtml}`;
       for (const item of section.items) sec.appendChild(renderCard(item));
       root.appendChild(sec);
     }
@@ -114,7 +114,8 @@
   function renderCard(item) {
     const card = document.createElement('div');
     card.className = 'card';
-    const tags = (item.tags || []).map(t => `<span class="tag ${t}">${t}</span>`).join('');
+    const tags = (item.tags || []).map(t => `<span class="tag ${t}">${t}</span>`).join('')
+      + (item.star ? `<span class="star" title="店家推薦">★</span>` : '');
     const priceLabel = item.priceNote ? `${item.priceNote.zh}` : `$${item.price}`;
     const units = unitsByItem.get(item.id);
     const baseUnit = units.find(u => !u.isAddon && !u.label);   // plain dish (no size choice)
@@ -134,14 +135,14 @@
       <div class="card-top">
         <div class="card-titles">
           <div class="item-name-zh">${item.name.zh}<span class="tags">${tags}</span></div>
-          <div class="item-name-en">${item.name.en}</div>
+          <div class="item-name-en">${item.name.ja}</div>
         </div>
         <div class="card-ctrl">
           <div class="price">${priceLabel}</div>
           ${baseUnit ? stepperHtml(baseUnit.unitId) : ''}
         </div>
       </div>
-      <div class="item-desc-zh">${item.desc.zh}</div>
+      ${item.note ? `<div class="item-desc-zh">${item.note.zh}</div>` : ''}
       <div class="others" data-others="${item.id}"></div>
       ${rows ? `<div class="units">${rows}</div>` : ''}`;
 
@@ -226,14 +227,14 @@
       for (const item of section.items) {
         for (const u of unitsByItem.get(item.id)) {
           if (u.unitId === unitId) {
-            if (u.isAddon) return { zh: `${item.name.zh}（＋${u.label.zh}）`, en: `${item.name.en} (+${u.label.en})` };
-            if (u.label) return { zh: `${item.name.zh}（${u.label.zh}）`, en: `${item.name.en} (${u.label.en})` };
-            return { zh: item.name.zh, en: item.name.en };
+            if (u.isAddon) return { zh: `${item.name.zh}（＋${u.label.zh}）`, ja: `${item.name.ja}（＋${u.label.zh}）` };
+            if (u.label) return { zh: `${item.name.zh}（${u.label.zh}）`, ja: `${item.name.ja}（${u.label.zh}）` };
+            return { zh: item.name.zh, ja: item.name.ja };
           }
         }
       }
     }
-    return { zh: unitId, en: unitId };
+    return { zh: unitId, ja: '' };
   }
 
   function renderSummary() {
@@ -252,9 +253,9 @@
         for (const [uid, q] of entries) {
           const lbl = labelForUnit(uid);
           const amt = q * (priceOf.get(uid) || 0);
-          html += `<div class="sum-line"><span><span class="q">${q}×</span> ${lbl.zh} <span class="en">${lbl.en}</span></span><span class="amt">$${amt}</span></div>`;
+          html += `<div class="sum-line"><span><span class="q">${q}×</span> ${lbl.zh} <span class="en">${lbl.ja}</span></span><span class="amt">$${amt}</span></div>`;
         }
-        html += `<div class="sum-seat-sub"><span>小計 subtotal</span><span>$${total}</span></div>`;
+        html += `<div class="sum-seat-sub"><span>小計 小計</span><span>$${total}</span></div>`;
       }
       html += `</div>`;
     });
@@ -284,9 +285,9 @@
   function renderLegend() {
     const el = document.getElementById('legend');
     el.innerHTML = Object.entries(MENU.legend)
-      .map(([k, v]) => `<span><b>${k}</b> · ${v.zh} ${v.en}</span>`).join('');
+      .map(([k, v]) => `<span><b>${k}</b> · ${v.zh} ${v.ja}</span>`).join('');
     document.getElementById('clearAllBtn').addEventListener('click', () => {
-      if (confirm('確定要清空所有人的點餐嗎？\nClear the whole table for everyone?')) send({ type: 'clearAll' });
+      if (confirm('確定要清空所有人的點餐嗎？\n全部の注文をクリアしますか？')) send({ type: 'clearAll' });
     });
 
     // fixed checkout bar: tap to expand/collapse the detail sheet

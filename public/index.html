@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>一起點餐 · Order Together</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AE%3C/text%3E%3C/svg%3E" />
+  <title>一起點餐 · みんなで注文</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%A3%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -24,11 +24,11 @@
 
     <aside class="summary" id="summary">
       <h2 class="summary-title">
-        <span>總覽</span><span class="en">Order Summary</span>
+        <span>訂單總覽</span><span class="en">ご注文</span>
       </h2>
       <div id="summaryBody"><!-- summary injected --></div>
       <div class="grand-total">
-        <span>總計 Total</span>
+        <span>總計 合計</span>
         <span id="grandTotal">$0</span>
       </div>
     </aside>
@@ -40,13 +40,13 @@
   <div class="checkout" id="checkout">
     <div class="checkout-detail" id="checkoutDetail">
       <div class="checkout-detail-head">
-        <span>訂單明細</span><span class="en">Order details</span>
+        <span>訂單明細</span><span class="en">ご注文明細</span>
       </div>
       <div id="checkoutBody"><!-- per-guest breakdown injected --></div>
     </div>
     <button class="checkout-bar" id="checkoutBar" aria-expanded="false">
       <span class="cb-caret" id="cbCaret">▴</span>
-      <span class="cb-count">共 <b id="cbCount">0</b> 道 · <span class="en">items</span></span>
+      <span class="cb-count">共 <b id="cbCount">0</b> 道</span>
       <span class="cb-seats" id="cbSeats"><!-- per-seat colored counts --></span>
       <span class="cb-grand" id="cbGrand">$0</span>
     </button>

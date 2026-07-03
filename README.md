@@ -1,23 +1,23 @@
-# 一起點餐 · Order Together
+# 一起點餐 · みんなで注文
 
-A clean, bilingual (**中文 / English**) group-ordering web app. Up to **4 diners**
-order at the same time from their own phones and every change syncs **live** to
-everyone's screen via WebSocket.
+A clean, mobile-first bilingual (**中文 / 日本語**) group-ordering web app. Up to
+**4 diners** order at the same time from their own phones and every change syncs
+**live** to everyone's screen via WebSocket.
 
-The menu is a Mexican-inspired restaurant menu (分享前菜、主餐、Tacos、Chilaquiles、
-甜點、兒童餐) with every dish, size option, and add-on shown in Chinese with the
-original English underneath.
+The menu is a Japanese izakaya menu (生魚片、燒烤、前菜、炸物、飯類) with each dish
+shown in Chinese with the Japanese name underneath. Recommended dishes are marked
+with a gold ★.
 
 ## Features
 
-- **中英對照** — Chinese heading with the English name and description right below it.
+- **中日對照** — Chinese name with the Japanese name right below it.
 - **四人同步 · 4 seats in real time** — pick a guest tab (1–4), tap `＋ / −` to
-  order. Everyone connected sees updates instantly; other guests' quantities show
-  as small colored badges on each dish.
-- **Live summary** — a running per-guest breakdown and a grand total.
-- **Sizes & add-ons** — e.g. soup cup/bowl, "add cheese", chilaquiles / kids
-  add-ons, each with its own stepper.
-- **Clean, large type** — comfortable font sizes; works on phone and desktop.
+  order. Everyone connected sees updates instantly; each dish shows colored badges
+  for who has ordered it.
+- **Fixed checkout bar** — an always-visible bottom bar with the total dish count,
+  per-guest counts, and grand total; tap to slide up the full per-guest breakdown.
+- **Prices** — set in `menu.json` (currently `0` placeholders, ready to fill in).
+- **Clean, large type** — mobile-first, comfortable font sizes.
 - **Prices are server-authoritative** — the server validates every item against
   `menu.json`, so totals can't be tampered with from the client.
 

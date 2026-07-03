@@ -1,279 +1,205 @@
 {
   "restaurant": {
-    "en": "Order Together",
-    "zh": "一起點餐"
+    "zh": "一起點餐",
+    "ja": "みんなで注文"
   },
   "legend": {
-    "DF": { "en": "Dairy Free", "zh": "無乳製品" },
-    "NF": { "en": "Nut Free", "zh": "無堅果" },
-    "GF": { "en": "Gluten Free", "zh": "無麩質" },
-    "V": { "en": "Vegan", "zh": "純素" }
+    "★": { "zh": "店家推薦", "ja": "おすすめ" }
   },
   "sections": [
     {
-      "id": "to-share",
-      "name": { "en": "To Share", "zh": "分享前菜" },
+      "id": "sashimi",
+      "name": { "zh": "生魚片", "ja": "刺身" },
       "items": [
         {
-          "id": "guacamole",
-          "name": { "en": "Guacamole", "zh": "酪梨醬" },
-          "desc": {
-            "en": "Avocado, cilantro, onion, feta cheese, pumpkin seeds, lime. Served with house-made corn chips",
-            "zh": "酪梨、香菜、洋蔥、菲達起司、南瓜籽、萊姆，附自製玉米片"
-          },
-          "price": 15,
-          "tags": ["GF", "NF"]
+          "id": "assorted-sashimi",
+          "name": { "zh": "綜合生魚片（7–8種）", "ja": "刺身盛り合わせ" },
+          "price": 0
         },
         {
-          "id": "sopa-tortilla",
-          "name": { "en": "Sopa de Tortilla", "zh": "墨西哥玉米片湯" },
-          "desc": {
-            "en": "Tomato-lentil broth, crema, feta cheese, cilantro, guajillo chile, avocado, crispy tortilla strips",
-            "zh": "番茄扁豆湯、墨西哥酸奶、菲達起司、香菜、瓜希柳辣椒、酪梨、酥脆玉米餅絲"
-          },
-          "price": 7,
-          "priceNote": { "en": "$7 / $12", "zh": "小 $7 / 大 $12" },
-          "priceOptions": [
-            { "label": { "en": "Cup", "zh": "小份" }, "price": 7 },
-            { "label": { "en": "Bowl", "zh": "大份" }, "price": 12 }
-          ],
-          "tags": ["GF", "NF"]
+          "id": "sashimi-tuna",
+          "name": { "zh": "鮪魚生魚片（單點）", "ja": "マグロ" },
+          "price": 0
         },
         {
-          "id": "golden-beet-ceviche",
-          "name": { "en": "Golden Beet Ceviche", "zh": "黃金甜菜檸檬漬" },
-          "desc": {
-            "en": "Golden beets, cucumber, onion, avocado, cilantro, charred poblano marinade. Served with house-made corn chips",
-            "zh": "黃金甜菜、小黃瓜、洋蔥、酪梨、香菜、炭烤波布拉諾辣椒醃醬，附自製玉米片"
-          },
-          "price": 18,
-          "tags": ["V", "GF", "DF", "NF"]
+          "id": "sashimi-bonito",
+          "name": { "zh": "鰹魚生魚片（單點）", "ja": "カツオ" },
+          "price": 0
         },
         {
-          "id": "shrimp-ceviche",
-          "name": { "en": "Shrimp Ceviche (Rojo or Verde)", "zh": "鮮蝦檸檬漬（紅醬或綠醬）" },
-          "desc": {
-            "en": "Red shrimp, cucumber, red onion, avocado, cilantro, tomatillo. Served with house-made corn chips",
-            "zh": "紅蝦、小黃瓜、紫洋蔥、酪梨、香菜、綠番茄，附自製玉米片"
-          },
-          "price": 24,
-          "tags": ["GF", "DF", "NF"]
+          "id": "sashimi-sea-urchin",
+          "name": { "zh": "海膽（單點）", "ja": "ウニ" },
+          "price": 0
         },
         {
-          "id": "hamachi-tiradito",
-          "name": { "en": "Hamachi Tiradito", "zh": "青甘魚生魚薄片" },
-          "desc": {
-            "en": "Cured hamachi, cucumber, red onion, guajillo oil, cilantro, jicama aguachile, tomatillo. Served with house-made corn chips",
-            "zh": "醃青甘魚、小黃瓜、紫洋蔥、瓜希柳辣椒油、香菜、豆薯辣汁、綠番茄，附自製玉米片"
-          },
-          "price": 30,
-          "tags": ["GF", "DF", "NF"]
+          "id": "sashimi-rosy-seabass",
+          "name": { "zh": "喉黑魚生魚片（單點）", "ja": "ノドグロ" },
+          "price": 0
         },
         {
-          "id": "potatoes-green-chorizo",
-          "name": { "en": "Potatoes con Green Chorizo", "zh": "綠香腸馬鈴薯" },
-          "desc": {
-            "en": "Fingerling potatoes, grilled green chorizo from Oyama Sausage Co, salsa macha, feta cheese, cilantro",
-            "zh": "手指馬鈴薯、Oyama 烤綠香腸、馬恰辣醬、菲達起司、香菜"
-          },
-          "price": 15,
-          "tags": ["GF", "NF"]
+          "id": "sashimi-abalone",
+          "name": { "zh": "鮑魚（單點）", "ja": "アワビ" },
+          "price": 0
         },
         {
-          "id": "halloumi-tostada",
-          "name": { "en": "Halloumi Tostada (1)", "zh": "哈羅米起司脆餅（1份）" },
-          "desc": {
-            "en": "Fried halloumi cheese, edamame hummus, avocado, lime, pumpkin and sesame seeds, cilantro, crispy corn tortilla",
-            "zh": "煎哈羅米起司、毛豆鷹嘴豆泥、酪梨、萊姆、南瓜籽與芝麻、香菜、酥脆玉米餅"
-          },
-          "price": 10,
-          "tags": ["GF", "NF"]
+          "id": "crab",
+          "name": { "zh": "蟹肉小品", "ja": "カニつまみ" },
+          "price": 0,
+          "star": true
         },
         {
-          "id": "greens-pipian-verde",
-          "name": { "en": "Greens con Pipián Verde", "zh": "青醬燒烤時蔬" },
-          "desc": {
-            "en": "Char-grilled broccolini and asparagus, parsley, cucumber, roasted pumpkin seeds. Served with four corn tortillas",
-            "zh": "炭烤青花菜苗與蘆筍、巴西里、小黃瓜、烤南瓜籽，附四片玉米餅"
-          },
-          "price": 19,
-          "tags": ["V", "GF", "DF", "NF"]
+          "id": "oyster",
+          "name": { "zh": "生蠔（生食或炙烤）", "ja": "カキ（生／焼き）" },
+          "price": 0,
+          "star": true
         }
       ]
     },
     {
-      "id": "mains",
-      "name": { "en": "Mains", "zh": "主餐" },
+      "id": "grill",
+      "name": { "zh": "燒烤", "ja": "焼き物" },
       "items": [
         {
-          "id": "highway-chicken",
-          "name": { "en": "Highway Chicken", "zh": "公路烤雞" },
-          "desc": {
-            "en": "Half Cornish chicken, dried chile rub, grilled bok choy, jalapeño orange bearnaise sauce. Served with five corn tortillas",
-            "zh": "半隻康沃爾雞、乾辣椒粉醃料、烤青江菜、墨西哥辣椒香橙貝亞恩醬，附五片玉米餅"
-          },
-          "price": 28,
-          "tags": ["GF", "NF"]
+          "id": "grill-rosy-seabass",
+          "name": { "zh": "炙烤喉黑魚", "ja": "ノドグロ" },
+          "price": 0,
+          "star": true
         },
         {
-          "id": "shrimp-corn-rajas",
-          "name": { "en": "Shrimp & Corn Rajas", "zh": "鮮蝦玉米辣椒" },
-          "desc": {
-            "en": "Poblano peppers, yellow corn, onion, cilantro, crema, cheese blend, sauteed shrimp. Served with five corn tortillas",
-            "zh": "波布拉諾辣椒、黃玉米、洋蔥、香菜、墨西哥酸奶、綜合起司、香煎鮮蝦，附五片玉米餅"
-          },
-          "price": 30,
-          "tags": ["GF"]
+          "id": "wagyu-steak",
+          "name": { "zh": "和牛沙朗牛排", "ja": "サーロイン" },
+          "price": 0,
+          "star": true
         },
         {
-          "id": "grilled-bavette",
-          "name": { "en": "Grilled Bavette", "zh": "炭烤側腹牛排" },
-          "desc": {
-            "en": "Grilled bavette steak, fingerling potatoes, crema, cilantro-chimichurri, roasted carrots, salsa macha, cilantro. Served with five corn tortillas",
-            "zh": "炭烤側腹牛排、手指馬鈴薯、墨西哥酸奶、香菜青醬、烤紅蘿蔔、馬恰辣醬、香菜，附五片玉米餅"
-          },
-          "price": 32,
-          "tags": ["GF", "NF"]
+          "id": "grilled-chicken",
+          "name": { "zh": "地雞炭火燒", "ja": "地鶏焼き" },
+          "price": 0,
+          "star": true
+        },
+        {
+          "id": "seasonal-vegetables",
+          "name": { "zh": "季節時蔬", "ja": "季節の野菜" },
+          "price": 0
+        },
+        {
+          "id": "sting-ray-fin",
+          "name": { "zh": "炙烤魟魚鰭", "ja": "エイヒレ" },
+          "price": 0
+        },
+        {
+          "id": "beef-tongue-roast-beef",
+          "name": { "zh": "牛舌烤牛肉", "ja": "牛タンローストビーフ" },
+          "price": 0
+        },
+        {
+          "id": "teriyaki-pork-belly",
+          "name": { "zh": "照燒豬五花", "ja": "豚バラ肉" },
+          "price": 0
+        },
+        {
+          "id": "wagyu-misuji",
+          "name": { "zh": "和牛三筋（醬油底）", "ja": "和牛みすじ" },
+          "price": 0
+        },
+        {
+          "id": "gyoza",
+          "name": { "zh": "煎餃", "ja": "ギョーザ" },
+          "price": 0
         }
       ]
     },
     {
-      "id": "tacos",
-      "name": { "en": "Tacos", "zh": "墨西哥夾餅 Tacos" },
-      "note": {
-        "en": "All served on handmade corn tortillas",
-        "zh": "皆以手工玉米餅盛裝"
-      },
+      "id": "appetizers",
+      "name": { "zh": "前菜", "ja": "前菜" },
       "items": [
         {
-          "id": "soy-chorizo-papas",
-          "name": { "en": "Soy Chorizo & Papas (3)", "zh": "素香腸馬鈴薯夾餅（3個）" },
-          "desc": {
-            "en": "House-made soy chorizo, crispy potatoes, guajillo-miso dressing, pickled red onion, cilantro",
-            "zh": "自製素香腸、酥脆馬鈴薯、瓜希柳辣椒味噌醬、醃紫洋蔥、香菜"
-          },
-          "price": 20,
-          "tags": ["V", "GF", "DF", "NF"]
+          "id": "potato-salad",
+          "name": { "zh": "馬鈴薯沙拉", "ja": "ポテトサラダ" },
+          "price": 0
         },
         {
-          "id": "smoked-salmon-gobernador",
-          "name": { "en": "Smoked Salmon Gobernador (3)", "zh": "煙燻鮭魚起司夾餅（3個）" },
-          "desc": {
-            "en": "Smoked salmon, melted cheese, pickled red onion, cilantro",
-            "zh": "煙燻鮭魚、融化起司、醃紫洋蔥、香菜"
-          },
-          "price": 22,
-          "tags": ["GF", "NF"]
+          "id": "green-salad",
+          "name": { "zh": "季節水果綠沙拉", "ja": "季節のグリーンサラダ" },
+          "price": 0
         },
         {
-          "id": "beef-birria",
-          "name": { "en": "Beef Birria (3)", "zh": "墨式燉牛肉夾餅（3個）" },
-          "desc": {
-            "en": "Slow-braised beef, birria consome, pickled red onion, cilantro",
-            "zh": "慢燉牛肉、birria 高湯、醃紫洋蔥、香菜"
-          },
-          "price": 22,
-          "tags": ["GF", "DF", "NF"],
-          "addons": [
-            { "id": "add-cheese", "name": { "en": "Add cheese", "zh": "加起司" }, "price": 2 }
-          ]
+          "id": "tuna-avocado",
+          "name": { "zh": "鮪魚酪梨佐山葵醬油", "ja": "マグロとアボカド" },
+          "price": 0
         },
         {
-          "id": "carne-asada-queso",
-          "name": { "en": "Carne Asada con Queso (3)", "zh": "起司烤牛肉夾餅（3個）" },
-          "desc": {
-            "en": "Citrus-marinated grilled beef, guacasalsa, cheese crust, grilled onion, cilantro",
-            "zh": "柑橘醃烤牛肉、酪梨莎莎醬、起司脆邊、烤洋蔥、香菜"
-          },
-          "price": 24,
-          "tags": ["GF", "NF"]
-        },
-        {
-          "id": "halibut",
-          "name": { "en": "Wild Line-Caught Halibut (2)", "zh": "野生延繩釣比目魚夾餅（2個）" },
-          "desc": {
-            "en": "Beer-battered halibut, tomato, onion, mayo, cilantro, red cabbage",
-            "zh": "啤酒麵衣比目魚、番茄、洋蔥、美乃滋、香菜、紫高麗菜"
-          },
-          "price": 27,
-          "tags": ["DF", "NF"]
+          "id": "fish-cutlet-sandwich",
+          "name": { "zh": "炸魚排三明治", "ja": "フィッシュカツサンド" },
+          "price": 0
         }
       ]
     },
     {
-      "id": "chilaquiles",
-      "name": { "en": "Chilaquiles", "zh": "墨西哥烤玉米片 Chilaquiles" },
+      "id": "deep-fried",
+      "name": { "zh": "炸物", "ja": "揚げ物" },
       "items": [
         {
-          "id": "chilaquiles-rojos",
-          "name": { "en": "Chilaquiles Rojos", "zh": "紅醬烤玉米片" },
-          "desc": {
-            "en": "House-made corn totopos, tomato-guajillo salsa, refried beans, feta cheese, crema, onion, cilantro, fried egg",
-            "zh": "自製玉米脆片、番茄瓜希柳莎莎醬、回鍋豆泥、菲達起司、墨西哥酸奶、洋蔥、香菜、煎蛋"
-          },
-          "price": 17,
-          "tags": ["GF", "NF"],
-          "addons": [
-            { "id": "fried-egg", "name": { "en": "Fried Egg", "zh": "煎蛋" }, "price": 2 },
-            { "id": "soy-chorizo", "name": { "en": "Soy Chorizo", "zh": "素香腸" }, "price": 5 },
-            { "id": "green-chorizo", "name": { "en": "Green Chorizo", "zh": "綠香腸" }, "price": 5 },
-            { "id": "beef-birria", "name": { "en": "Beef Birria", "zh": "燉牛肉" }, "price": 5 },
-            { "id": "carne-asada", "name": { "en": "Carne Asada", "zh": "烤牛肉" }, "price": 6 }
-          ]
+          "id": "seasonal-tempura",
+          "name": { "zh": "季節天婦羅", "ja": "季節の天ぷら" },
+          "price": 0,
+          "star": true
         },
         {
-          "id": "chilaquiles-verdes",
-          "name": { "en": "Chilaquiles Verdes", "zh": "綠醬烤玉米片" },
-          "desc": {
-            "en": "House-made corn totopos, tomatillo-cilantro salsa, refried beans, feta cheese, crema, onion, cilantro, fried egg",
-            "zh": "自製玉米脆片、綠番茄香菜莎莎醬、回鍋豆泥、菲達起司、墨西哥酸奶、洋蔥、香菜、煎蛋"
-          },
-          "price": 17,
-          "tags": ["GF", "NF"],
-          "addons": [
-            { "id": "fried-egg", "name": { "en": "Fried Egg", "zh": "煎蛋" }, "price": 2 },
-            { "id": "soy-chorizo", "name": { "en": "Soy Chorizo", "zh": "素香腸" }, "price": 5 },
-            { "id": "green-chorizo", "name": { "en": "Green Chorizo", "zh": "綠香腸" }, "price": 5 },
-            { "id": "beef-birria", "name": { "en": "Beef Birria", "zh": "燉牛肉" }, "price": 5 },
-            { "id": "carne-asada", "name": { "en": "Carne Asada", "zh": "烤牛肉" }, "price": 6 }
-          ]
+          "id": "spring-roll",
+          "name": { "zh": "季節春捲", "ja": "春巻き" },
+          "price": 0
+        },
+        {
+          "id": "katsu-ni",
+          "name": { "zh": "滑蛋炸豬排", "ja": "カツ煮" },
+          "price": 0
         }
       ]
     },
     {
-      "id": "dessert",
-      "name": { "en": "Dessert", "zh": "甜點" },
+      "id": "rice",
+      "name": { "zh": "飯類", "ja": "ご飯もの" },
       "items": [
         {
-          "id": "churros",
-          "name": { "en": "House-Made Churros (3)", "zh": "自製吉拿棒（3條）" },
-          "desc": {
-            "en": "Dulce de leche, cinnamon sugar, horchata gelato, cacao nibs",
-            "zh": "牛奶焦糖醬、肉桂糖、歐洽塔米漿義式冰淇淋、可可碎粒"
-          },
-          "price": 13,
-          "tags": ["NF"]
-        }
-      ]
-    },
-    {
-      "id": "kids",
-      "name": { "en": "Kids Menu", "zh": "兒童餐" },
-      "items": [
+          "id": "shirako-risotto",
+          "name": { "zh": "白子起司燉飯", "ja": "白子チーズリゾット" },
+          "price": 0,
+          "star": true
+        },
         {
-          "id": "quesadillas",
-          "name": { "en": "Quesadillas (2)", "zh": "起司薄餅（2個）" },
-          "desc": {
-            "en": "Flour tortillas, melted cheese, mashed avocado",
-            "zh": "麵粉薄餅、融化起司、酪梨泥"
-          },
-          "price": 12,
-          "tags": ["NF"],
-          "addons": [
-            { "id": "soy-chorizo", "name": { "en": "Soy Chorizo", "zh": "素香腸" }, "price": 5 },
-            { "id": "beef-birria", "name": { "en": "Beef Birria", "zh": "燉牛肉" }, "price": 5 },
-            { "id": "carne-asada", "name": { "en": "Carne Asada", "zh": "烤牛肉" }, "price": 6 }
-          ]
+          "id": "tuna-sushi-roll",
+          "name": { "zh": "極品鐵火卷", "ja": "極み鉄火巻き" },
+          "price": 0,
+          "star": true
+        },
+        {
+          "id": "grilled-rice-ball",
+          "name": { "zh": "炙烤飯糰", "ja": "焼きおにぎり" },
+          "note": { "zh": "配料可選鮭魚卵或海膽" },
+          "price": 0,
+          "star": true
+        },
+        {
+          "id": "salted-onigiri",
+          "name": { "zh": "鹽味飯糰佐味噌湯", "ja": "塩おにぎりと味噌汁" },
+          "price": 0
+        },
+        {
+          "id": "ochazuke",
+          "name": { "zh": "茶泡飯", "ja": "お茶漬け" },
+          "note": { "zh": "綠茶澆飯" },
+          "price": 0
+        },
+        {
+          "id": "salmon-roe-sushi",
+          "name": { "zh": "鮭魚卵壽司", "ja": "いくら" },
+          "price": 0
+        },
+        {
+          "id": "sea-urchin-sushi",
+          "name": { "zh": "海膽壽司", "ja": "うに" },
+          "price": 0
         }
       ]
     }

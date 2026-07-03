@@ -112,6 +112,7 @@ body {
   color: var(--ink-soft); background: #faf7f0;
 }
 .tag.V { color: var(--ok); border-color: #bfe6cd; background: #eefaf1; }
+.star { color: #e0a52b; font-size: .95rem; margin-left: 6px; vertical-align: middle; }
 .item-desc-zh { font-size: .9rem; color: #45505c; margin-top: 6px; line-height: 1.4; }
 
 .units { margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
