@@ -116,19 +116,19 @@
     card.className = 'card';
     const tags = (item.tags || []).map(t => `<span class="tag ${t}">${t}</span>`).join('')
       + (item.star ? `<span class="star" title="店家推薦">★</span>` : '');
-    const priceLabel = item.priceNote ? `${item.priceNote.zh}` : `$${item.price}`;
     const units = unitsByItem.get(item.id);
     const baseUnit = units.find(u => !u.isAddon && !u.label);   // plain dish (no size choice)
     const sizeUnits = units.filter(u => !u.isAddon && u.label);  // e.g. soup cup/bowl
     const addonUnits = units.filter(u => u.isAddon);             // e.g. add cheese
+    const priceLabel = item.priceNote ? `${item.priceNote.zh}` : (baseUnit ? `¥${baseUnit.price}` : '');
 
     // The base dish stepper sits inline with the price (no wasted row).
     // Size/add-on choices get their own labelled rows below.
     const rows = [
       ...sizeUnits.map(u =>
-        `<div class="unit-row"><div class="unit-label">${u.label.zh} <span class="unit-price">$${u.price}</span></div>${stepperHtml(u.unitId)}</div>`),
+        `<div class="unit-row"><div class="unit-label">${u.label.zh} <span class="unit-price">¥${u.price}</span></div>${stepperHtml(u.unitId)}</div>`),
       ...addonUnits.map(u =>
-        `<div class="unit-row"><div class="unit-label">＋ ${u.label.zh} <span class="unit-price">+$${u.price}</span></div>${stepperHtml(u.unitId)}</div>`)
+        `<div class="unit-row"><div class="unit-label">＋ ${u.label.zh} <span class="unit-price">+¥${u.price}</span></div>${stepperHtml(u.unitId)}</div>`)
     ].join('');
 
     card.innerHTML = `
@@ -138,7 +138,7 @@
           <div class="item-name-en">${item.name.ja}</div>
         </div>
         <div class="card-ctrl">
-          <div class="price">${priceLabel}</div>
+          ${priceLabel ? `<div class="price">${priceLabel}</div>` : ''}
           ${baseUnit ? stepperHtml(baseUnit.unitId) : ''}
         </div>
       </div>
@@ -253,9 +253,9 @@
         for (const [uid, q] of entries) {
           const lbl = labelForUnit(uid);
           const amt = q * (priceOf.get(uid) || 0);
-          html += `<div class="sum-line"><span><span class="q">${q}×</span> ${lbl.zh} <span class="en">${lbl.ja}</span></span><span class="amt">$${amt}</span></div>`;
+          html += `<div class="sum-line"><span><span class="q">${q}×</span> ${lbl.zh} <span class="en">${lbl.ja}</span></span><span class="amt">¥${amt}</span></div>`;
         }
-        html += `<div class="sum-seat-sub"><span>小計 小計</span><span>$${total}</span></div>`;
+        html += `<div class="sum-seat-sub"><span>小計 小計</span><span>¥${total}</span></div>`;
       }
       html += `</div>`;
     });
@@ -263,11 +263,11 @@
     // sidebar (desktop) + slide-up sheet share the same breakdown
     document.getElementById('summaryBody').innerHTML = html;
     document.getElementById('checkoutBody').innerHTML = html;
-    document.getElementById('grandTotal').textContent = `$${grand}`;
+    document.getElementById('grandTotal').textContent = `¥${grand}`;
 
     // fixed bar quick stats
     document.getElementById('cbCount').textContent = grandCount;
-    document.getElementById('cbGrand').textContent = `$${grand}`;
+    document.getElementById('cbGrand').textContent = `¥${grand}`;
     const seatsEl = document.getElementById('cbSeats');
     seatsEl.innerHTML = '';
     SEATS.forEach(seat => {

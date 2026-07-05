@@ -4,9 +4,9 @@ A clean, mobile-first bilingual (**中文 / 日本語**) group-ordering web app.
 **4 diners** order at the same time from their own phones and every change syncs
 **live** to everyone's screen via WebSocket.
 
-The menu is a Japanese izakaya menu (生魚片、燒烤、前菜、炸物、飯類) with each dish
-shown in Chinese with the Japanese name underneath. Recommended dishes are marked
-with a gold ★.
+The menu is SAVOY's Italian menu (沙拉、前菜、燉煮料理、披薩) with each dish shown
+in Chinese with the Japanese name underneath. Recommended dishes are marked with a
+gold ★. Some items (salads) offer full/half size options.
 
 ## Features
 
@@ -16,7 +16,7 @@ with a gold ★.
   for who has ordered it.
 - **Fixed checkout bar** — an always-visible bottom bar with the total dish count,
   per-guest counts, and grand total; tap to slide up the full per-guest breakdown.
-- **Prices** — set in `menu.json` (currently `0` placeholders, ready to fill in).
+- **Prices** — set in `menu.json`, in Japanese yen (¥).
 - **Clean, large type** — mobile-first, comfortable font sizes.
 - **Prices are server-authoritative** — the server validates every item against
   `menu.json`, so totals can't be tampered with from the client.
@@ -60,7 +60,6 @@ share state. Restarts/redeploys clear the table.
 State is in memory only, so restarting the server clears the table (the
 `清空全部 · Clear all` button does the same on demand).
 
-## Dietary tags
+## Allergen tags
 
-**DF** 無乳製品 Dairy Free · **NF** 無堅果 Nut Free · **GF** 無麩質 Gluten Free ·
-**(V)** 純素 Vegan
+**蛋** 含蛋 Contains Egg · **奶** 含奶製品 Contains Dairy

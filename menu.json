@@ -1,205 +1,200 @@
 {
   "restaurant": {
-    "zh": "一起點餐",
-    "ja": "みんなで注文"
+    "zh": "SAVOY",
+    "ja": "サボイ"
   },
   "legend": {
-    "★": { "zh": "店家推薦", "ja": "おすすめ" }
+    "蛋": { "zh": "含蛋", "ja": "卵" },
+    "奶": { "zh": "含奶製品", "ja": "牛乳" }
   },
   "sections": [
     {
-      "id": "sashimi",
-      "name": { "zh": "生魚片", "ja": "刺身" },
+      "id": "salad",
+      "name": { "zh": "沙拉", "ja": "サラダ" },
       "items": [
         {
-          "id": "assorted-sashimi",
-          "name": { "zh": "綜合生魚片（7–8種）", "ja": "刺身盛り合わせ" },
-          "price": 0
+          "id": "insalata-verde",
+          "name": { "zh": "綠沙拉", "ja": "グリーンサラダ" },
+          "tags": ["蛋"],
+          "priceOptions": [
+            { "label": { "zh": "整份" }, "price": 1210 },
+            { "label": { "zh": "半份" }, "price": 770 }
+          ]
         },
         {
-          "id": "sashimi-tuna",
-          "name": { "zh": "鮪魚生魚片（單點）", "ja": "マグロ" },
-          "price": 0
-        },
-        {
-          "id": "sashimi-bonito",
-          "name": { "zh": "鰹魚生魚片（單點）", "ja": "カツオ" },
-          "price": 0
-        },
-        {
-          "id": "sashimi-sea-urchin",
-          "name": { "zh": "海膽（單點）", "ja": "ウニ" },
-          "price": 0
-        },
-        {
-          "id": "sashimi-rosy-seabass",
-          "name": { "zh": "喉黑魚生魚片（單點）", "ja": "ノドグロ" },
-          "price": 0
-        },
-        {
-          "id": "sashimi-abalone",
-          "name": { "zh": "鮑魚（單點）", "ja": "アワビ" },
-          "price": 0
-        },
-        {
-          "id": "crab",
-          "name": { "zh": "蟹肉小品", "ja": "カニつまみ" },
-          "price": 0,
-          "star": true
-        },
-        {
-          "id": "oyster",
-          "name": { "zh": "生蠔（生食或炙烤）", "ja": "カキ（生／焼き）" },
-          "price": 0,
-          "star": true
+          "id": "insalata-con-prosciutto",
+          "name": { "zh": "生火腿沙拉", "ja": "生ハムのサラダ" },
+          "tags": ["蛋"],
+          "priceOptions": [
+            { "label": { "zh": "整份" }, "price": 2310 },
+            { "label": { "zh": "半份" }, "price": 1210 }
+          ]
         }
       ]
     },
     {
-      "id": "grill",
-      "name": { "zh": "燒烤", "ja": "焼き物" },
+      "id": "antipasti",
+      "name": { "zh": "前菜", "ja": "アンティパスト" },
       "items": [
         {
-          "id": "grill-rosy-seabass",
-          "name": { "zh": "炙烤喉黑魚", "ja": "ノドグロ" },
-          "price": 0,
-          "star": true
+          "id": "polpo-marinato",
+          "name": { "zh": "醃漬章魚", "ja": "タコのマリネ" },
+          "price": 990
         },
         {
-          "id": "wagyu-steak",
-          "name": { "zh": "和牛沙朗牛排", "ja": "サーロイン" },
-          "price": 0,
-          "star": true
+          "id": "funghi-misti",
+          "name": { "zh": "鯷魚蒜香炒野菇", "ja": "きのこのアンチョビ・ガーリックソテー" },
+          "price": 770
         },
         {
-          "id": "grilled-chicken",
-          "name": { "zh": "地雞炭火燒", "ja": "地鶏焼き" },
-          "price": 0,
-          "star": true
+          "id": "caprese",
+          "name": { "zh": "卡布里沙拉", "ja": "カプレーゼ" },
+          "note": { "zh": "阿梅拉番茄與水牛莫札瑞拉起司" },
+          "tags": ["奶"],
+          "price": 1870
         },
         {
-          "id": "seasonal-vegetables",
-          "name": { "zh": "季節時蔬", "ja": "季節の野菜" },
-          "price": 0
+          "id": "mozzarella-di-bufala",
+          "name": { "zh": "水牛莫札瑞拉起司", "ja": "水牛のモッツァレラ" },
+          "tags": ["奶"],
+          "price": 1870
         },
         {
-          "id": "sting-ray-fin",
-          "name": { "zh": "炙烤魟魚鰭", "ja": "エイヒレ" },
-          "price": 0
+          "id": "olive",
+          "name": { "zh": "橄欖", "ja": "オリーブ" },
+          "price": 660
         },
         {
-          "id": "beef-tongue-roast-beef",
-          "name": { "zh": "牛舌烤牛肉", "ja": "牛タンローストビーフ" },
-          "price": 0
+          "id": "formaggi-misti",
+          "name": { "zh": "綜合起司拼盤", "ja": "チーズの盛り合わせ" },
+          "note": { "zh": "口味可詢問服務人員" },
+          "tags": ["奶"],
+          "price": 2200
         },
         {
-          "id": "teriyaki-pork-belly",
-          "name": { "zh": "照燒豬五花", "ja": "豚バラ肉" },
-          "price": 0
+          "id": "broccoli",
+          "name": { "zh": "蒜辣炒花椰菜", "ja": "ブロッコリーのソテー" },
+          "note": { "zh": "大蒜、辣椒" },
+          "price": 880
         },
         {
-          "id": "wagyu-misuji",
-          "name": { "zh": "和牛三筋（醬油底）", "ja": "和牛みすじ" },
-          "price": 0
+          "id": "prosciutto-crudo",
+          "name": { "zh": "生火腿", "ja": "生ハム" },
+          "price": 1760
         },
         {
-          "id": "gyoza",
-          "name": { "zh": "煎餃", "ja": "ギョーザ" },
-          "price": 0
+          "id": "prosciutto-e-mozzarella",
+          "name": { "zh": "生火腿佐水牛莫札瑞拉", "ja": "生ハムと水牛のモッツァレラ" },
+          "tags": ["奶"],
+          "price": 2200
+        },
+        {
+          "id": "prosciutto-in-oil",
+          "name": { "zh": "油漬生火腿丁", "ja": "角切り生ハムのオイル漬け" },
+          "price": 770
+        },
+        {
+          "id": "giardiniera",
+          "name": { "zh": "醃漬蔬菜", "ja": "ピクルス" },
+          "price": 770
+        },
+        {
+          "id": "french-fries",
+          "name": { "zh": "炸薯條", "ja": "フライドポテト" },
+          "price": 880
         }
       ]
     },
     {
-      "id": "appetizers",
-      "name": { "zh": "前菜", "ja": "前菜" },
+      "id": "stufato",
+      "name": { "zh": "燉煮料理", "ja": "煮込み料理" },
       "items": [
         {
-          "id": "potato-salad",
-          "name": { "zh": "馬鈴薯沙拉", "ja": "ポテトサラダ" },
-          "price": 0
+          "id": "polpette",
+          "name": { "zh": "番茄燉肉丸", "ja": "ポルペッテ" },
+          "note": { "zh": "義式肉丸番茄燉煮" },
+          "price": 880
         },
         {
-          "id": "green-salad",
-          "name": { "zh": "季節水果綠沙拉", "ja": "季節のグリーンサラダ" },
-          "price": 0
-        },
-        {
-          "id": "tuna-avocado",
-          "name": { "zh": "鮪魚酪梨佐山葵醬油", "ja": "マグロとアボカド" },
-          "price": 0
-        },
-        {
-          "id": "fish-cutlet-sandwich",
-          "name": { "zh": "炸魚排三明治", "ja": "フィッシュカツサンド" },
-          "price": 0
+          "id": "trippa",
+          "name": { "zh": "番茄燉牛肚", "ja": "トリッパ" },
+          "note": { "zh": "蜂巢牛肚番茄燉煮" },
+          "price": 880
         }
       ]
     },
     {
-      "id": "deep-fried",
-      "name": { "zh": "炸物", "ja": "揚げ物" },
+      "id": "pizza",
+      "name": { "zh": "披薩", "ja": "ピザ" },
+      "note": { "zh": "已內含10%服務費及稅金；提供經典或酒粕熟成兩種生地可選；使用莫札瑞拉起司的披薩可免費更換為植物性莫札瑞拉" },
       "items": [
         {
-          "id": "seasonal-tempura",
-          "name": { "zh": "季節天婦羅", "ja": "季節の天ぷら" },
-          "price": 0,
-          "star": true
+          "id": "margherita",
+          "name": { "zh": "瑪格麗特", "ja": "マルゲリータ" },
+          "note": { "zh": "莫札瑞拉起司、羅勒" },
+          "price": 1980
         },
         {
-          "id": "spring-roll",
-          "name": { "zh": "季節春捲", "ja": "春巻き" },
-          "price": 0
+          "id": "marinara",
+          "name": { "zh": "瑪利納拉", "ja": "マリナーラ" },
+          "note": { "zh": "番茄、大蒜、奧勒岡" },
+          "price": 1650
         },
         {
-          "id": "katsu-ni",
-          "name": { "zh": "滑蛋炸豬排", "ja": "カツ煮" },
-          "price": 0
-        }
-      ]
-    },
-    {
-      "id": "rice",
-      "name": { "zh": "飯類", "ja": "ご飯もの" },
-      "items": [
-        {
-          "id": "shirako-risotto",
-          "name": { "zh": "白子起司燉飯", "ja": "白子チーズリゾット" },
-          "price": 0,
-          "star": true
+          "id": "bianca",
+          "name": { "zh": "比安卡", "ja": "ビアンカ" },
+          "note": { "zh": "莫札瑞拉起司、佩科里諾羊乳酪" },
+          "price": 2200
         },
         {
-          "id": "tuna-sushi-roll",
-          "name": { "zh": "極品鐵火卷", "ja": "極み鉄火巻き" },
-          "price": 0,
-          "star": true
+          "id": "premium-wagyu-tartar",
+          "name": { "zh": "頂級和牛塔塔披薩", "ja": "プレミアム和牛のタルタル" },
+          "note": { "zh": "宮崎「霧島和牛」奢華塔塔，附現磨山葵、自製美乃滋、莫札瑞拉起司" },
+          "star": true,
+          "price": 4840
         },
         {
-          "id": "grilled-rice-ball",
-          "name": { "zh": "炙烤飯糰", "ja": "焼きおにぎり" },
-          "note": { "zh": "配料可選鮭魚卵或海膽" },
-          "price": 0,
-          "star": true
+          "id": "pizza-o-japanese-beef",
+          "name": { "zh": "尾崎牛燉肉披薩", "ja": "ピッツァ『O』尾崎牛の煮込み" },
+          "note": { "zh": "尾崎牛燉肉、番茄醬、羅勒、莫札瑞拉起司" },
+          "price": 3300
         },
         {
-          "id": "salted-onigiri",
-          "name": { "zh": "鹽味飯糰佐味噌湯", "ja": "塩おにぎりと味噌汁" },
-          "price": 0
+          "id": "pizza-y-japanese-tuna",
+          "name": { "zh": "本鮪魚披薩", "ja": "ピッツァ『Y』本マグロ" },
+          "note": { "zh": "豐洲「山幸」天然黑鮪魚、莫札瑞拉起司、自製美乃滋、玉米泥" },
+          "star": true,
+          "price": 3960
         },
         {
-          "id": "ochazuke",
-          "name": { "zh": "茶泡飯", "ja": "お茶漬け" },
-          "note": { "zh": "綠茶澆飯" },
-          "price": 0
+          "id": "romana",
+          "name": { "zh": "羅馬納", "ja": "ロマーナ" },
+          "note": { "zh": "鯷魚、奧勒岡辛香料、番茄、莫札瑞拉起司" },
+          "price": 2530
         },
         {
-          "id": "salmon-roe-sushi",
-          "name": { "zh": "鮭魚卵壽司", "ja": "いくら" },
-          "price": 0
+          "id": "domi-la-deluxe",
+          "name": { "zh": "Domi-LA 豪華披薩", "ja": "Domi-LA デラックス" },
+          "note": { "zh": "義式臘腸、培根、青椒、莫札瑞拉起司、紫洋蔥" },
+          "price": 2860
         },
         {
-          "id": "sea-urchin-sushi",
-          "name": { "zh": "海膽壽司", "ja": "うに" },
-          "price": 0
+          "id": "diavola",
+          "name": { "zh": "惡魔披薩", "ja": "ディアヴォラ" },
+          "note": { "zh": "辣味沙拉米、煙燻莫札瑞拉、格拉娜起司、番茄" },
+          "price": 2860
+        },
+        {
+          "id": "ciceniello",
+          "name": { "zh": "吻仔魚大蒜披薩", "ja": "チチニエッリ" },
+          "note": { "zh": "釜揚吻仔魚、生大蒜、番茄" },
+          "price": 2640
+        },
+        {
+          "id": "margherita-doc",
+          "name": { "zh": "瑪格麗特 D.O.C.", "ja": "マルゲリータ D.O.C." },
+          "note": { "zh": "水牛莫札瑞拉起司、羅勒葉、小番茄" },
+          "price": 2970
         }
       ]
     }
